@@ -9,14 +9,15 @@ public class Plate {
     @Id
     @Column(name = "PLATE", nullable = false, unique = true)
     String plate;
-    String car_brand;
+    @Column(name = "car_brand")
+    String carBrand;
     String car_model;
     String color;
     int year;
 
-    public Plate(String plate, String car_brand, String car_model, String color, int year) {
+    public Plate(String plate, String carBrand, String car_model, String color, int year) {
         this.plate = plate;
-        this.car_brand = car_brand;
+        this.carBrand = carBrand;
         this.car_model = car_model;
         this.color = color;
         this.year = year;
@@ -33,12 +34,12 @@ public class Plate {
         this.plate = plate;
     }
 
-    public String getCar_brand() {
-        return car_brand;
+    public String getCarBrand() {
+        return carBrand;
     }
 
-    public void setCar_brand(String car_brand) {
-        this.car_brand = car_brand;
+    public void setCarBrand(String carBrand) {
+        this.carBrand = carBrand;
     }
 
     public String getCar_model() {

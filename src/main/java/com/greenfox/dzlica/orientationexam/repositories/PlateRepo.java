@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface PlateRepo extends CrudRepository<Plate, Long> {
     List<Plate> findAllByPlateIsLike(String plate);
+    List<Plate> findAllByCarBrand(String brand);
 
 }

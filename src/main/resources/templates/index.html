@@ -14,21 +14,22 @@
 </form>
 <p></p>
 <a th:href="@{/?search=rb}" th:text="'Police cars only'" />
-<a th:href="@{/?search=db}" th:text="'Diplomats only'" />
+<a th:href="@{/?search=dt}" th:text="'Diplomats only'" />
 
 <p></p>
 <table>
 <h1>Licence plates</h1>
 <tr>
     <th>Plate</th>
-    <th>Car brand</th>
+    <th>Car Brand</th>
     <th>Car model</th>
     <th>Color</th>
     <th>Year</th>
 </tr>
 <tr th:each="plate:${plates}">
     <td th:text="${plate.plate}"></td>
-    <td th:text="${plate.car_brand}"></td>
+    <!--<td th:text="${plate.carBrand}"></td>-->
+    <td><a th:href="@{/search/{brand}(brand=${plate.carBrand})}" th:text="${plate.carBrand}"></a></td>
     <td th:text="${plate.car_model}"></td>
     <td th:text="${plate.color}"></td>
     <td th:text="${plate.year}"></td>
