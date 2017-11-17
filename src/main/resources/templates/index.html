@@ -5,6 +5,9 @@
     <title>Licence plates</title>
 </head>
 <body>
+<p></p>
+<a th:href="@{/}" th:text="'Home'" />
+<p></p>
 <form th:action="@{/}" th:object="${search}" method="get">
     <input type="search" name="search" placeholder="ABC-123"/>
     <button type="submit" value="Submit">Search</button>
