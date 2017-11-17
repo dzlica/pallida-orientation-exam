@@ -1,0 +1,21 @@
+package com.greenfox.dzlica.orientationexam.controllers;
+
+import com.greenfox.dzlica.orientationexam.repositories.PlateRepo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class PlateController {
+
+    @Autowired
+    PlateRepo plateRepo;
+
+    @RequestMapping({"", "/"})
+    public String list(Model model) {
+        return "index";
+    }
+
+
+}
