@@ -11,13 +11,7 @@ public class PlateRestController {
     @Autowired
     PlateRepo plateRepo;
 
-//    @GetMapping("/search")
-//    public Object seraching() {
-//
-//    }
-//
-//    @GetMapping("/search/{brand}")
 
-
+ //   @GetMapping("/api/search/{brand}")
 
 }

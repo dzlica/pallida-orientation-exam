@@ -92,14 +92,14 @@ The endpoint should return this data structure:
     "data": [
         {
             "plate": "HMZ-140",
-            "car_brand": "Audi",
+            "carBrand": "Audi",
             "car_model": "A8",
             "year": 2016,
             "color": "red"
         },
         {
             "plate": "HMZ-555",
-            "car_brand": "BMZ",
+            "carBrand": "BMZ",
             "car_model": "Z4",
             "year": 2011,
             "color": "pink"

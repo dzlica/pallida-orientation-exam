@@ -9,21 +9,28 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.jws.WebParam;
-
 @Controller
 public class PlateController {
 
     @Autowired
     PlateRepo plateRepo;
 
-    @RequestMapping({"","/"})
-    public String list(Model model, @RequestParam(required = false) String search) {
-        if (search != null) {
-            model.addAttribute("plates",  plateRepo.findAllByPlateIsLike("%" + search + "%"));
+    @RequestMapping("/search")
+    public String list(Model model, @RequestParam(required = false) String q, @RequestParam(required = false) boolean police, @RequestParam(required = false) boolean diplomat) {
+        if (q == null) {
+            q = "";
+        }
+        if (police) {
+            model.addAttribute("plates", plateRepo.findAllByPlateIsLike("RB%" + q + "%"));
+        } else if (diplomat) {
+            model.addAttribute("plates", plateRepo.findAllByPlateIsLike("DT%" + q + "%"));
+        } else {
+            model.addAttribute("plates", plateRepo.findAllByPlateIsLike("%" + q + "%"));
         }
         return "index";
     }
+
+
 
     @GetMapping("search/{brand}")
     public String serachBrand(Model model, @PathVariable String brand) {

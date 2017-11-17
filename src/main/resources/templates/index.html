@@ -6,15 +6,15 @@
 </head>
 <body>
 <p></p>
-<a th:href="@{/}" th:text="'Home'" />
+<a th:href="@{/search}" th:text="'Home'" />
 <p></p>
-<form th:action="@{/}" th:object="${search}" method="get">
+<form th:action="@{/search}" th:object="${q}" method="get">
     <input type="search" name="search" placeholder="ABC-123"/>
     <button type="submit" value="Submit">Search</button>
 </form>
 <p></p>
-<a th:href="@{/?search=rb}" th:text="'Police cars only'" />
-<a th:href="@{/?search=dt}" th:text="'Diplomats only'" />
+<a th:href="@{/search/?police=1}" th:text="'Police cars only'" />
+<a th:href="@{/search/?diplomat=1}" th:text="'Diplomats only'" />
 
 <p></p>
 <table>
@@ -35,7 +35,5 @@
     <td th:text="${plate.year}"></td>
 </tr>
 </table>
-
-
 </body>
 </html>
