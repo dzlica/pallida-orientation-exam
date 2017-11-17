@@ -1,12 +1,13 @@
 package com.greenfox.dzlica.orientationexam.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "licence_plates")
 public class Plate {
 
+    @Id
+    @Column(name = "PLATE", nullable = false, unique = true)
     String plate;
     String car_brand;
     String car_model;

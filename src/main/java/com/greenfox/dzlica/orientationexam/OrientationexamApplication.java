@@ -9,15 +9,18 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class OrientationexamApplication implements CommandLineRunner{
 
-	@Autowired
+    @Autowired
     PlateRepo plateRepo;
 
 	public static void main(String[] args) {
 		SpringApplication.run(OrientationexamApplication.class, args);
 	}
 
-	@Override
-	public void run(String... args) throws Exception {
 
-	}
+    @Override
+    public void run(String... args) throws Exception {
+
+    }
 }
+
+
